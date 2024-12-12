@@ -1,0 +1,247 @@
+@font-face {
+    src: url('../fonts/Oswald-Regular.woff2');
+    font-family: "Oswald Regular";
+}
+
+body {
+    font-family: "Oswald Regular", Helvetica, Arial, sans-serif;
+    background-color: rgb(229, 228, 234);
+}
+
+h1,
+h2 {
+    font-style: italic;
+    text-transform: uppercase;
+    margin: 12px auto;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px auto;
+}
+
+.content {
+    display: block;
+    max-width: 1000px ;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
+    grid-auto-flow: dense;
+    margin-top: 50px;
+    background-color: rgb(67, 66, 68);
+}
+
+.grid-item {
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.bio-photo {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(67, 66, 68);
+}
+
+.bio-photo-image {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 30px 0px 8px;
+}
+
+.bio-data{
+    background-color: rgb(255, 255, 255);
+}
+.bio-data-body {
+    text-align: center;
+    margin: 20px;
+}
+
+.contacts {
+    background-color: rgb(255, 255, 255);
+}
+
+.contacts-item {
+    padding: 3px;
+    margin: 20px;
+}
+
+.icon {
+    height: 30px;
+    padding: 0 3px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    margin: 2px;
+}
+
+.contact:nth-child(n + 2) {
+    border-top: 1px solid rgb(67, 66, 68);
+}
+
+.about-me {
+    background-color: rgb(67, 66, 68);
+    grid-column: 1/2;    
+    grid-row: 2/3 ;
+}
+
+.about-me h2 {
+    color: rgb(255, 255, 255);
+}
+
+.about-me-text {
+    padding: 0 5px;
+    margin-bottom: 10;
+}
+
+.about-me-text p {
+    color: rgb(255, 255, 255);
+}
+
+.edu-skill-grid {
+    background-color: rgb(255, 255, 255);
+    grid-column: 2/-1;
+}
+
+.timeline {
+    box-sizing: border-box;
+    position: relative;
+    max-width: 666px;
+    margin: 0 auto;
+    border-top: 1px solid rgb(67, 66, 68);
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: rgb(67, 66, 68);
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 5px;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 4px;
+    background-color: rgb(67, 66, 68);
+    top: 23px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.timeline-text {
+    padding: 5px;
+    position: relative;
+}
+
+.right::after {
+    left: -9px;
+}
+
+.skills {
+    margin-top: 30px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.skillbar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    border-top: 1px solid rgb(67, 66, 68);
+}
+
+.skillbar-item {
+    padding: 0px 20px;
+}
+
+.skills-item {
+    width: 100%;
+    background-color: rgb(229, 228, 234);
+}
+
+.skill {
+    width: fit-content;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.python {width: 60%; background-color: rgb(67, 66, 68);}
+.django {width: 60%; background-color: rgb(67, 66, 68);}
+.drf {width: 60%; background-color: rgb(67, 66, 68);}
+.js {width: 40%; background-color: rgb(67, 66, 68);}
+.css {width: 40%; background-color: rgb(67, 66, 68);}
+.html {width: 40%; background-color: rgb(67, 66, 68);}
+
+@media (max-width: 600px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0px;
+    }
+
+    .edu-skill-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .timeline::after {
+        left: 15px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 25px;
+        padding-right: 10px;
+    }
+
+    .left::after, .right::after {
+        left: 6px;
+    }
+
+    .right {
+        left: 0%;
+    }
+
+    .about-me {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .about-me h2 {
+        color: rgb(0, 0, 0);
+    }
+
+    .about-me-text p {
+        color: rgb(0, 0, 0);
+    }
+
+    .skillbar {
+        display: flex;
+        flex-direction: column;
+    }
+}
